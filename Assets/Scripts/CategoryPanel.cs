@@ -143,5 +143,9 @@ public class CategoryPanel : MonoBehaviour
         itemDetailsPanel.SetAllUIDetailsStatus(false);
         //Disable filter details
         filterPanel.SetFilterUIStatus(false);
+        //Reset gender toggle selected
+        filterPanel.ClearSelectedGenderDetails();
+        //Reset item display panel position
+        filterPanel.ResetItemUIPosition();
     }
 }

@@ -121,6 +121,12 @@ public class ItemsPanel : MonoBehaviour
         {
             //Show sub fileter details
             filterPanel.SetFilterUIStatus(true);
+            Toggle genderToggle = filterPanel.GetSelectedGenderToggleDetails();
+            if(genderToggle != null)
+            {
+                //Filter with already applied filter details for New category selected
+                FilterItemsBasedOnSelections(genderToggle);
+            }
         }
     }
 

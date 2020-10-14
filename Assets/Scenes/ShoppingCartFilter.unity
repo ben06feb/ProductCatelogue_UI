@@ -663,6 +663,7 @@ MonoBehaviour:
   itemsPanel: {fileID: 1438235219}
   itemDetailsPanel: {fileID: 1329901701}
   genderToggleGroup: {fileID: 22561027}
+  selectedGenderToggle: {fileID: 0}
   filterUIGObj: {fileID: 1485626508}
   itemsUIGObj: {fileID: 1438235215}
 --- !u!222 &162080931
@@ -6530,7 +6531,7 @@ MonoBehaviour:
   categoryInfos: []
   itemsPanel: {fileID: 1438235219}
   itemInfos: []
-  itemCountList: 00000000
+  itemCountList: 06000000
   minPriceList: 
   maxPriceList: 00000000
   commonDescriptionList:
