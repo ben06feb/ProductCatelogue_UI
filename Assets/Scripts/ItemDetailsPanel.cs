@@ -7,9 +7,15 @@ using TMPro;
 
 public class ItemDetailsPanel : MonoBehaviour
 {
+    //Item details UI set
     [SerializeField]
     private GameObject itemDetailsUIGObj;
 
+    //Item message UI set
+    [SerializeField]
+    private GameObject itemMessageUIGObj;
+
+    //Item details to display
     [SerializeField]
     private RawImage itemImg;
     [SerializeField]
@@ -23,12 +29,13 @@ public class ItemDetailsPanel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI itemGenderTxt;
 
-
+    //To active/in-active details
     public void SetDetailsUIStatus (bool status)
     {
         itemDetailsUIGObj.SetActive(status);
     }
 
+    //Set selected item details in UI
     public void SetItemDetails(ItemInfos info)
     {
         itemNameTxt.text = info.itemName;
@@ -38,4 +45,15 @@ public class ItemDetailsPanel : MonoBehaviour
         itemGenderTxt.text = info.itemGender;
     }
 
+    //To active/in-active message
+    public void SetMessageUIStatus(bool status)
+    {
+        itemMessageUIGObj.SetActive(status);
+    }
+
+    public void SetAllUIDetailsStatus (bool status)
+    {
+        itemDetailsUIGObj.SetActive(status);
+        itemMessageUIGObj.SetActive(status);
+    }
 }

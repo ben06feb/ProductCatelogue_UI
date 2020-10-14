@@ -30,9 +30,8 @@ public class CategoryPanel : MonoBehaviour
     [SerializeField]
     private List<CategoryInfos> categoryInfo = new List<CategoryInfos>();
 
-    //Selected category
     [SerializeField]
-    private CategoryInfo highlightedCategory;
+    private int selectedCategoryId = -1;
 
     //Colors based on selection
     [SerializeField]
@@ -49,6 +48,10 @@ public class CategoryPanel : MonoBehaviour
     //Item details panel access
     [SerializeField]
     private ItemDetailsPanel itemDetailsPanel;
+
+    //Filter details panel access
+    [SerializeField]
+    private FilterPanel filterPanel;
 
     //Generate category 
     public void CreateCategories(List<CategoryInfos> infos)
@@ -106,6 +109,7 @@ public class CategoryPanel : MonoBehaviour
 
     public void SegregateCategory (int categoryId)
     {
+        selectedCategoryId = categoryId;
         for (int categoryIndex = 0; categoryIndex < allCategoriesBtn.Count; categoryIndex++)
         {
             //Reset all category button
@@ -116,14 +120,15 @@ public class CategoryPanel : MonoBehaviour
         //Set clear button active
         clearBtn.interactable = true;
 
+        //Disable all item details displaying
+        itemDetailsPanel.SetAllUIDetailsStatus(false);
         //Filter out selected category items
         itemsPanel.OnCategorySelection(categoryId);
-        //Disable item details displaying
-        itemDetailsPanel.SetDetailsUIStatus(false);
     }
 
     public void ClearAllSelection ()
     {
+        selectedCategoryId = -1;
         for (int categoryIndex = 0; categoryIndex < allCategoriesBtn.Count; categoryIndex++)
         {
             //Reset all category button
@@ -134,7 +139,9 @@ public class CategoryPanel : MonoBehaviour
         clearBtn.interactable = false;
         //Clear filter - show all items
         itemsPanel.OnClearingCategorySelection();
-        //Disable item details displaying
-        itemDetailsPanel.SetDetailsUIStatus(false);
+        //Disable all item details displaying
+        itemDetailsPanel.SetAllUIDetailsStatus(false);
+        //Disable filter details
+        filterPanel.SetFilterUIStatus(false);
     }
 }

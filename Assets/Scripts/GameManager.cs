@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
     {
         //Get instance of the script to access outside
         instance = this;
+
+        //Disable logs except EDITOR
+#if !UNITY_EDITOR
+        Debug.unityLogger.logEnabled = false;
+#endif
     }
 
     //Resturn script instance

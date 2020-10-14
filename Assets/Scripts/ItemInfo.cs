@@ -73,7 +73,7 @@ public class ItemInfo : MonoBehaviour
 
         nameTxt.text = itemName;
         //Rating - Show one digit after decimal
-        ratingTxt.text = "Rating - "+String.Format("{0:0.0}", itemRating);
+        ratingTxt.text = String.Format("{0:0.0}", itemRating);
         priceTxt.text = itemPrice.ToString() + " Rs"; 
     }
 
@@ -81,6 +81,12 @@ public class ItemInfo : MonoBehaviour
     public int GetCategoryId()
     {
         return itemCategoryId;
+    }
+
+    //Get gender of item
+    public string GetItemGender()
+    {
+        return itemGender;
     }
 
     public void ShowItemDetails ()
