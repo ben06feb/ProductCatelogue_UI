@@ -1,2 +1,2 @@
-# KIKSAR_Test
- Simple shoping cart filter UI setup in Unity
+# Shopping cart filter UI
+ Simple shopping cart filter UI setup in Unity
